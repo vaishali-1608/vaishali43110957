@@ -11,8 +11,184 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Poppins", serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        .navbar-links {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #1d232c;
+        }
+
+        .navbar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-menu-toggle {
+            display: none;
+        }
+
+        .side-navbar {
+            background-color: #1d232c;
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -60%;
+            padding: 20px;
+            color: white;
+            transition: 1s;
+        }
+
+        .side-navbar-link {
+            margin-bottom: 30px;
+        }
+
+        .side-navbar-links a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .side-navbar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        .header-button {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            background-color: #1d232c;
+            color: white;
+            cursor: pointer;
+        }
+
+        .service {
+            padding: 20px;
+        }
+
+        .service-container-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-container-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-container-2 div {
+            background-color: #f2f4f7;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .new-arrival {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .new-arrival-container {
+            position: relative;
+            flex-basis: 20%;
+        }
+
+        .new-arrival button {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 10px;
+            color: #1d232c;
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .news {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .news input {
+            padding: 10px;
+            width: 900px;
+            margin-bottom: 10px;
+            border: solid black 3px;
+        }
+
+        .news button {
+            margin-top: 10px;
+            background-color: #1d232c;
+            color: #f2f4f7;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .footer {
+            margin-top: 10px;
+            padding: 40px;
+            background-color: #1d232c;
+            color: #f2f4f7;
+        }
+
+        @media screen and (max-width:700px) {
+            .navbar-menu-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .header-image {
+                display: none;
+            }
+
+            .service-container-1 {
+                display: none;
+            }
+
+            .service-container-2 {
+                flex-direction: column;
+            }
+        }
+    </style>
 
 </head>
 
@@ -51,7 +227,8 @@
         </div>
 
         <div>
-            <img class="header-image" src="c:\Users\DELL\OneDrive\Desktop\project imgs\fashion img 300x300.jpg">
+            <img class="header-image"
+                src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\fashion img 300x300.jpg">
         </div>
     </div>
 
@@ -71,19 +248,22 @@
             <div>
                 <i class="fa-regular fa-face-smile"></i>
                 <h4>Satisfaction Gurantee</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id alias?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id
+                    alias?</p>
             </div>
 
             <div>
                 <i class="fa-regular fa-face-smile"></i>
                 <h4>New Arrival Everyday</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id alias?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id
+                    alias?</p>
             </div>
 
             <div>
                 <i class="fa-regular fa-face-smile"></i>
                 <h4>Fast & Free shipping</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id alias?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem possimus, dolorem dicta id
+                    alias?</p>
             </div>
         </div>
     </div>
@@ -91,22 +271,22 @@
     <h2 style="padding: 20px;">New Arrival</h2>
     <div class="new-arrival">
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\1-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\1-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\2-img-200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\2-img-200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\3-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\3-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\4-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\4-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
@@ -114,22 +294,22 @@
     <h2 style="padding: 20px;">Most Wanted</h2>
     <div class="new-arrival">
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\5-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\5-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\6-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\6-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\7-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\7-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <div class="new-arrival-container">
-            <img src="c:\Users\DELL\OneDrive\Desktop\project imgs\8-img 200x200.jpg">
+            <img src="c:\Users\DELL\OneDrive\Desktop\FSWD\Nostra - Ecommerce\Ecommerse proj imgs\8-img 200x200.jpg">
             <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
@@ -161,6 +341,18 @@
 
         <p>@2024 Nostra.com</p>
     </div>
+
+    <script>
+        var sidenav = document.querySelector(".side-navbar")
+
+        function showNavbar() {
+            sidenav.style.left = "0"
+        }
+
+        function closeNavbar() {
+            sidenav.style.left = "-60%"
+        }
+    </script>
 </body>
 
 </html>
