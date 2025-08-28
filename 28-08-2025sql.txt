@@ -1,0 +1,39 @@
+show databases;
+use sathyabama;
+CREATE TABLE WORKERS(
+NAME varchar(20)not null, 
+DEPT varchar(20),
+salary int,
+age int ,
+id int not null);
+
+INSERT INTO WORKERS (NAME, DEPT, salary, age, id) VALUES
+('Vaishali', 'CSE', 45000, 23, 1),
+('Sangeetha', 'ECE', 52000, 25, 2),
+('Swetha', 'IT', 48000, 22, 3),
+('Rahul', 'MECH', 60000, 28, 4),
+('Karthik', 'EEE', 40000, 24, 5),
+('Divya', 'CIVIL', 55000, 27, 6),
+('Arun', 'IT', 47000, 23, 7),
+('Meena', 'CSE', 62000, 26, 8),
+('Pranav', 'ECE', 51000, 21, 9),
+('Sneha', 'CSE', 58000, 29, 10);
+DROP TABLE WORKERS;
+SELECT * FROM WORKERS;
+SELECT * FROM WORKERS order by AGE ASC;
+SELECT DEPT,count(DEPT) AS CountOfDept FROM WORKERS group by DEPT ;
+
+# count of workers not in eee,civil;
+SELECT count(NAME) FROM WORKERS WHERE DEPT NOT IN ('EEE','CIVIL');
+
+# highest salary in each department
+SELECT DEPT,MAX(SALARY) FROM WORKERS group by DEPT ;
+
+#offset
+SELECT * FROM WORKERS ORDER BY id LIMIT 10 OFFSET 2;
+
+#UPPERCASE
+SELECT UPPER(NAME) AS NAME_UPPER FROM WORKERS;
+
+#lowercase
+SELECT LOWER(NAME) AS NAME_LOWER FROM WORKERS;
