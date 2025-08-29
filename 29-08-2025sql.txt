@@ -1,0 +1,34 @@
+SHOW DATABASES;
+USE SATHYABAMA;
+SHOW TABLES;
+CREATE TABLE CSE(regno INT PRIMARY KEY,name VARCHAR(20),dept VARCHAR(10),marks INT);
+CREATE TABLE ECE(regno INT PRIMARY KEY,name VARCHAR(20),dept VARCHAR(10),marks INT);
+
+INSERT INTO CSE VALUES(001,'vaishali','CSE', NULL);
+INSERT INTO CSE VALUES(002,'sangeetha','CSE', NULL);
+INSERT INTO CSE VALUES(003,'swetha','CSE', NULL);
+
+INSERT INTO ECE VALUES(001,'nikitha','ECE', NULL);
+INSERT INTO ECE VALUES(002,'zahra','ECE', NULL);
+INSERT INTO ECE VALUES(003,'priya','ECE', NULL);
+
+SELECT * FROM CSE;
+SELECT * FROM ECE;
+
+#inner join
+SELECT CSE.regno, CSE.name AS CSE_Name, ECE.name AS ECE_Name FROM CSE INNER JOIN ECE ON CSE.regno = ECE.regno;
+
+#left join
+SELECT CSE.regno, CSE.name AS CSE_Name, ECE.name AS ECE_Name FROM CSE LEFT JOIN ECE ON CSE.regno = ECE.regno;
+
+#right join
+SELECT CSE.regno, CSE.name AS CSE_Name, ECE.name AS ECE_Name FROM CSE RIGHT JOIN ECE ON CSE.regno = ECE.regno;
+
+#full join
+SELECT CSE.regno, CSE.name AS CSE_Name, ECE.name AS ECE_Name FROM CSE FULL JOIN ECE ON CSE.regno = ECE.regno;
+
+#cross join
+SELECT CSE.name AS CSE_Name, ECE.name AS ECE_Name FROM CSE CROSS JOIN ECE;
+
+#self join
+SELECT A.name AS Student1, B.name AS Student2 FROM CSE A, CSE B WHERE A.regno < B.regno AND A.dept = B.dept;
