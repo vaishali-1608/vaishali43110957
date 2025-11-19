@@ -1,0 +1,126 @@
+package practise;
+public class Demo {
+
+	public static void main(String[] args) {
+		Vehicle v = new Vehicle();
+		v.bike();
+		System.out.println(v.name);
+		Demo d = new Demo();
+	}
+}
+class Vehicle
+{
+	String name = "Vaishali";
+	void bike()
+	{
+		System.out.println("Vaishali is riding a bike");
+	}
+	
+	void car()
+	{
+		System.out.println("Vaishali is riding a car");
+	}
+}
+class Animal
+{
+	String nme = "Harrish";
+	void dog()
+	{
+		System.out.println("Harrish having a pet dog");
+	}
+}
+
+
+
+
+
+
+
+package practise;
+public class Demo {
+
+	public static void main(String[] args) {
+
+		Program prgm = new Program();
+		
+		prgm.addition();
+	}
+}
+class Program{
+	int marks = 100;
+	protected void addition()
+	{
+		int result = marks*100;
+		System.out.println(result);
+	
+		class InsideClass{
+			void division(){
+				System.out.println("method Local inner class output");
+			}
+		}
+	}
+	
+	//initial block
+	{
+		System.out.println("Welcome...!");
+	}
+	
+	//constru //def //parame
+	public Program1() 
+	{
+		System.out.println("Iam a def const..");
+	}
+	public Program1(int a){
+		a = marks+a;
+		System.out.println(a);
+	}
+}
+
+
+
+
+
+
+
+package practise;
+public class Demo 
+{
+	public static void main(String[] args) 
+	{
+		Son1 s1=new Son1();
+		s1.bike();
+		Son2 s2=new Son2();
+		s2.bike();
+		s2.oldBike();
+	}
+}
+class GrandFather
+{
+	void oldBike()
+	{
+		System.out.println("Royal Enfield 1983");
+	}
+}
+
+class Father extends GrandFather
+{
+	void oldBike()
+	{
+		System.out.println("Royal Enfield 2002");
+	}
+}
+
+class Son1 extends Father
+{
+	void bike()
+	{
+		System.out.println("KTM 390");
+	}
+}
+class Son2 extends Father
+{
+	void bike()
+	{
+		System.out.println("RC KTM 390");
+	}
+}	
