@@ -1,0 +1,207 @@
+//overloading
+package practise;
+
+public class Demo 
+{
+    public static void main(String[] args) 
+    {
+        Son1 s1 = new Son1();
+        s1.bike();            
+        s1.bike("Orange");    
+
+        Son2 s2 = new Son2();
+        s2.bike();            
+        s2.bike(2025);        
+        s2.oldBike();         
+    }
+}
+
+class GrandFather
+{
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 1983");
+    }
+}
+
+class Father extends GrandFather
+{
+
+    void oldBike()
+    {
+        System.out.println("Royal Enfield 2002");
+    }
+
+   
+    void oldBike(String color)
+    {
+        System.out.println("Royal Enfield 2002 - Color: " + color);
+    }
+}
+
+class Son1 extends Father
+{
+  
+    void bike()
+    {
+        System.out.println("KTM 390");
+    }
+
+    void bike(String color)
+    {
+        System.out.println("KTM 390 - Color: " + color);
+    }
+}
+
+class Son2 extends Father
+{
+    
+    void bike()
+    {
+        System.out.println("RC KTM 390");
+    }
+
+  
+    void bike(int modelYear)
+    {
+        System.out.println("RC KTM 390 - Model: " + modelYear);
+    }
+}
+
+
+
+
+
+//encapsulation
+
+package practise;
+
+public class Demo 
+{
+    public static void main(String[] args) 
+    {
+        Son1 s1 = new Son1();
+        s1.setBikeName("KTM 390");
+        s1.bike();
+        s1.bike("Orange"); 
+
+        Son2 s2 = new Son2();
+        s2.setBikeName("RC KTM 390");
+        s2.bike();
+        s2.bike(2024);    
+        s2.oldBike();
+    }
+}
+
+class GrandFather
+{
+    private String oldBikeName = "Royal Enfield 1983";   
+
+    public String getOldBikeName() {                     
+        return oldBikeName;
+    }
+
+    public void setOldBikeName(String bike) {            
+        this.oldBikeName = bike;
+    }
+
+    void oldBike()
+    {
+        System.out.println(getOldBikeName());
+    }
+}
+
+class Father extends GrandFather
+{
+    
+    void oldBike()
+    {
+        setOldBikeName("Royal Enfield 2002");
+        System.out.println(getOldBikeName());
+    }
+
+    void oldBike(String color)
+    {
+        System.out.println(getOldBikeName() + " - Color: " + color);
+    }
+}
+
+class Son1 extends Father
+{
+    private String bikeName;  
+
+    public void setBikeName(String name) {
+        this.bikeName = name;
+    }
+
+    public String getBikeName() {
+        return bikeName;
+    }
+
+    void bike()
+    {
+        System.out.println(getBikeName());
+    }
+
+    void bike(String color)
+    {
+        System.out.println(getBikeName() + " - Color: " + color);
+    }
+}
+
+class Son2 extends Father
+{
+    private String bikeName;   
+
+    public void setBikeName(String name) {
+        this.bikeName = name;
+    }
+
+    public String getBikeName() {
+        return bikeName;
+    }
+
+
+    void bike()
+    {
+        System.out.println(getBikeName());
+    }
+
+
+    void bike(int model)
+    {
+        System.out.println(getBikeName() + " - Model: " + model);
+    }
+}
+
+
+
+
+
+
+//exception handling
+
+package practise;
+
+public class Demo 
+{
+    public static void main(String[] args) 
+    {
+
+        try 
+        {
+            int a = 50;
+            int b = 0;
+            int result = a / b;
+            System.out.println(result);
+        }
+        catch (ArithmeticException e) 
+        {
+            System.out.println("Can't divide by zero");
+        }
+        finally 
+        {
+            System.out.println("Program ended");
+        }
+    }
+}
