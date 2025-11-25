@@ -1,0 +1,252 @@
+//THREADS
+package practise;
+
+public class Demo {
+    public static void main(String args[]) {
+
+        Numeric num = new Numeric();
+        Alpha alp = new Alpha();
+
+        num.start();
+        alp.start();
+
+        System.out.println("Number Thread : " + num.getName());
+        System.out.println("Alphabets Thread : " + alp.getName());
+
+        System.out.println("Number Thread Priority : " + num.getPriority());
+        System.out.println("Alphabets Thread Priority : " + alp.getPriority());
+
+        System.out.println("Number Thread State : " + num.getState());
+        System.out.println("Alphabets Thread State : " + alp.getState());
+
+        System.out.println("Current Thread : " + Thread.currentThread().getName());
+
+        num.setName("Jayanth");
+        alp.setName("Karthick");
+
+        System.out.println("Number Thread State : " + num.getState());
+        System.out.println("Alphabets Thread State : " + alp.getState());
+
+        if (num.isAlive()) {
+            System.out.println("Jayanth thread is Alive");
+        } else {
+            System.out.println("Jayanth Thread is dead");
+        }
+
+        if (alp.isAlive()) {
+            System.out.println("Karthick thread is Alive");
+        } else {
+            System.out.println("Karthick Thread is dead");
+        }
+    }
+}
+
+class Numeric extends Thread {
+    int a = 0;
+
+    public void run() {
+        try {
+            for (int i = 0; i <= 10; i++) {
+                a++;
+                System.out.println("Numeric Thread : " + a);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+class Alpha extends Thread {
+    char a = 'A';
+
+    public void run() {
+        try {
+            for (int i = 0; i <= 25; i++) {
+                System.out.println("Alpha Thread : " + a);
+                a++;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+
+
+
+
+//ARRAYS
+package practise;
+
+public class Demo {
+
+    public static void printArray(int[] arr) {
+        System.out.print("Array: ");
+        for (int a : arr) System.out.print(a + " ");
+        System.out.println();
+    }
+
+
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int a : arr) if (a > max) max = a;
+        return max;
+    }
+
+   
+    public static int findMin(int[] arr) {
+        int min = arr[0];
+        for (int a : arr) if (a < min) min = a;
+        return min;
+    }
+
+  
+    public static int sumArray(int[] arr) {
+        int sum = 0;
+        for (int a : arr) sum += a;
+        return sum;
+    }
+
+    public static double averageArray(int[] arr) {
+        return (double) sumArray(arr) / arr.length;
+    }
+
+    public static boolean search(int[] arr, int key) {
+        for (int a : arr) if (a == key) return true;
+        return false;
+    }
+
+    public static void reverseArray(int[] arr) {
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++; j--;
+        }
+    }
+    public static int[] copyArray(int[] arr) {
+        int[] copy = new int[arr.length];
+        for (int i = 0; i < arr.length; i++)
+            copy[i] = arr[i];
+        return copy;
+    }
+
+    public static void sortArray(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+    public static int[] mergeArrays(int[] a, int[] b) {
+        int[] merged = new int[a.length + b.length];
+        int k = 0;
+
+        for (int x : a) merged[k++] = x;
+        for (int x : b) merged[k++] = x;
+
+        return merged;
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {5, 2, 9, 1, 7};
+        int[] arr2 = {10, 20};
+
+        printArray(arr);
+
+        System.out.println("Max: " + findMax(arr));
+        System.out.println("Min: " + findMin(arr));
+        System.out.println("Sum: " + sumArray(arr));
+        System.out.println("Average: " + averageArray(arr));
+        System.out.println("Is 9 present? " + search(arr, 9));
+
+        reverseArray(arr);
+        System.out.print("Reversed ");
+        printArray(arr);
+
+        int[] copy = copyArray(arr);
+        System.out.print("Copied ");
+        printArray(copy);
+
+        sortArray(arr);
+        System.out.print("Sorted ");
+        printArray(arr);
+
+        int[] merged = mergeArrays(arr, arr2);
+        System.out.print("Merged ");
+        printArray(merged);
+    }
+}
+
+
+
+
+//STRINGS
+package practise;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        System.out.println("STRING:");
+        String s1 = "Hello";
+        String s2 = s1.concat(" World");  
+        System.out.println("Original String: " + s1); 
+        System.out.println("After concat: " + s2);
+        System.out.println("Length: " + s1.length());
+        System.out.println("Uppercase: " + s1.toUpperCase());
+        System.out.println("Character at index 1: " + s1.charAt(1));
+        System.out.println("\n STRINGBUFFER:");
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.append(" World");
+        System.out.println("After append: " + sb);
+        sb.insert(5, " Java");
+        System.out.println("After insert: " + sb);
+        sb.replace(0, 5, "Hi");
+        System.out.println("After replace: " + sb);
+        sb.reverse();
+        System.out.println("After reverse: " + sb);
+        System.out.println("\n STRINGBUILDER:");
+        StringBuilder sb2 = new StringBuilder("Hello");
+        sb2.append(" World");
+        System.out.println("After append: " + sb2);
+        sb2.delete(5, 11);
+        System.out.println("After delete: " + sb2);
+        sb2.append(" Java Programming");
+        System.out.println("Final Output: " + sb2);
+    }
+}
+
+
+
+
+
+//STRING BUILDER
+package practise;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World");
+        System.out.println("append(): " + sb);
+        sb.insert(5, " Java");
+        System.out.println("insert(): " + sb);
+        sb.replace(0, 5, "Hi");
+        System.out.println("replace(): " + sb);
+        sb.delete(2, 7);
+        System.out.println("delete: " + sb);
+        sb.reverse();
+        System.out.println("reverse: " + sb); 
+        sb.reverse();
+        System.out.println("capacity: " + sb.capacity());
+        System.out.println("length: " + sb.length());
+    }
+}
